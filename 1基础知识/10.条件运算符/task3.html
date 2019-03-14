@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task3</title>
+</head>
+<body>
+
+<script>
+    let name = prompt('Who\'s there?');
+
+    if (name == null || name == '') {
+        alert('Canceled.');
+    } else if (name == 'Admin') {
+        let password = prompt('Password?');
+        if (password == null :|| password == '') {
+            alert('Canceled.');
+        } else if (password == 'The Master') {
+            alert('Welcome!');
+        } else {
+            alert('Wrong password')
+        }
+    } else {
+        alert('I don\'t know you');
+    }
+
+</script>
+
+</body>
+</html>
