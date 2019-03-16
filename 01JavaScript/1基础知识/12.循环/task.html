@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    let i = 3;
+    while (i) {
+        console.log(i--);// 3 2 1
+    }
+
+    let j = 0;
+    while (++j < 5) console.log(j);// 1 2 3 4
+
+    let k = 0;
+    while (k++ < 5) console.log(k);// 1 2 3 4 5
+
+    for (let i = 2; i <= 10; i += 2) {
+        if (i % 2 == 0) {
+            console.log(i);
+        }
+    }
+
+    for (let i = 0; i < 3; i++) {
+        console.log(`number ${i}`);
+    }
+
+    let l = 0;
+    while (l < 3) {
+        console.log(`number ${l}`);
+        l++;
+    }
+    //
+    // let num;
+    // do {
+    //     num = prompt("输入一个大于100的数", '0');
+    // } while (num <= 100 && num);
+
+    let n = prompt('请输入一个数字', '');
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
+            alert('合数');
+            break;
+        }
+        if (n % i != 0 && i == n-1) {
+            alert('质数');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    alert(null || 2 || undefined); // 2
+
+    alert(alert(1) || 2 || alert(3)); // 1 2
+
+    alert(1 && null && 2); // null
+
+    alert(alert(1) && alert(2)); // 1 undefined
+
+    alert(null || 2 && 3 && 4); //3
+
+    if (-1 || 0) alert( 'first' ); // first
+    if (-1 && 0) alert( 'second' );
+    if (null || -1 && 1) alert( 'third' ); // third
+</script>
+
+</body>
+</html>
