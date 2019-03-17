@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    let browser = prompt("请输入你的浏览器名称");
+    if (browser == 'Edge') {
+        alert("You've got the Edge!");
+    } else if (browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera') {
+        alert('Okay we support these browsers too');
+    } else {
+        alert('We hope that this page looks ok!');
+    }
+
+    let a = prompt('a?', '');
+    switch (a) {
+        case 0:
+            alert(0);
+            break;
+        case 1:
+            alert(1);
+            break;
+        case 2:
+        case 3:
+            alert('2,3');
+            break;
+        default:
+            break;
+    }
+</script>
+
+</body>
+</html>
