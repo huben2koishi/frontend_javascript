@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task2</title>
+</head>
+<body>
+
+<script>
+    function readNumber() {
+        let num ;
+
+        do {
+            num = prompt('请输入一个数字', '0');
+        } while (!isFinite(num))
+
+        if (num === null || num==='') return;
+        return +num;
+    }
+    alert(`read: ${readNumber()}`);
+</script>
+
+</body>
+</html>
