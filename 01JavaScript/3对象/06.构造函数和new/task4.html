@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task4</title>
+</head>
+<body>
+
+<script>
+    function Calculator() {
+        let methods = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b
+        };
+        this.calculate = function (str) {
+            let split = str.split(' '),
+                a = +split[0],
+                op = split[1],
+                b = +split[2];
+            if (!methods[op] || isNaN(a) || isNaN(b)) {
+                return NaN;
+            }
+            return methods[op](a, b);
+        };
+        this.addMethod = function (name, func) {
+            methods[name] = func;
+        };
+    }
+</script>
+
+</body>
+</html>
