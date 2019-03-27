@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function ucFirst(str) {
+        return str.slice(0, 1).toUpperCase() + str.slice(1);
+    }
+
+    function checkSpam(str) {
+        return str.toLowerCase().includes('viagra') || str.toLowerCase().includes('viagra');
+    }
+
+    function truncate(str, maxlength) {
+        return str.length <= maxlength ?
+            str :
+            str.slice(0, maxlength) + '…';
+    }
+
+    function extractCurrencyValue(str) {
+        if (str.startsWith('$')) return str.slice(1);
+    }
+</script>
+
+</body>
+</html>
