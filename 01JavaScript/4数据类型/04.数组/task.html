@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    let fruits = ['apple', 'pear', 'orange'];
+    let shoppingCart = fruits;
+    shoppingCart.push('banana');
+    alert(fruits.length); // 4
+
+    let styles = ['jazz', 'blues'];
+    styles.push('rock-n-roll');
+    styles[(styles.length + 1) / 2 - 1] = 'classics';
+    styles.shift();
+    styles.unshift('rap', 'reggae');
+
+    let arr = ['a', 'b'];
+    arr.push(function () {
+        console.log(this);
+    });
+    arr[2]();
+
+    function sumInput() {
+        let arr = [];
+        while (true) {
+            let n = prompt('请输入一个数字', '0');
+
+            if (n === null || n === '' || !isFinite(n)) break;
+
+            arr.push(+n);
+        }
+        let sum = 0;
+        for (let number of arr) {
+            sum += number;
+        }
+        return sum;
+    }
+
+    alert(sumInput());
+
+    function getMaxSubSum(arr) {
+        let result = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let num = 0;
+            for (let j = i; j < arr.length; j++) {
+                num+=arr[j];
+                result = Math.max(num,result);
+            }
+        }
+        return result;
+    }
+</script>
+
+</body>
+</html>

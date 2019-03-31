@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function camelize(str) {
+        return str
+            .split('-')
+            .map((value, index) => {
+                return index == 0 ? value : value[0].toUpperCase() + value.slice(1);
+            })
+            .join('');
+    }
+
+    function filterRange(arr, a, b) {
+        return arr.filter(value => value >= a && value < b);
+    }
+
+    let john = {name: "John", age: 25};
+    let pete = {name: "Pete", age: 30};
+    let mary = {name: "Mary", age: 28};
+
+    let users = [john, pete, mary];
+
+    let names = users.map(value => value.name);
+
+    alert(names); // John, Pete, Mary
+
+    john = {name: "John", surname: "Smith", id: 1};
+    pete = {name: "Pete", surname: "Hunt", id: 2};
+    mary = {name: "Mary", surname: "Key", id: 3};
+
+    users = [john, pete, mary];
+
+    let usersMapped = users.map(value => ({
+        fullName: `${value.name} ${value.surname}`,
+        id: value.id,
+    }));
+
+    alert(usersMapped[0].id); // 1
+    alert(usersMapped[0].fullName); // John Smith
+
+    function sortByName(arr) {
+        arr.sort(function (a, b) {
+            if (a.name > b.name) return 1;
+            if (a.name == b.name) return 0;
+            if (a.name < b.name) return -1;
+        });
+    }
+
+    john = {name: "John", age: 25};
+    pete = {name: "Pete", age: 30};
+    mary = {name: "Mary", age: 28};
+
+    let arr = [john, pete, mary];
+
+    sortByName(arr);
+
+    // 现在排序是：[john, mary, pete]
+    alert(arr[1].name); // Mary
+
+    function getAverageAge(arr) {
+        return arr.reduce((prev, user) => prev + user.age, 0) / arr.length;
+    }
+
+    function unique(arr) {
+        let result = [];
+        for (let item of arr) {
+            if (!result.includes(item)) result.push(item);
+        }
+        return result;
+    }
+</script>
+
+</body>
+</html>
