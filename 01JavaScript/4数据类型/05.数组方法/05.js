@@ -99,17 +99,20 @@ for (let name of arr8) {
 // join(s) 将数组通过分隔符s组合为一个字符串
 
 // let value = arr.reduce(function(previousValue, item, index, arr) {
-//   ...
+//   ... 通过为每个元素调用 func 计算数组上的单个值并在调用之间传递中间结果
 // }, initial);
 let arr9 = [1, 2, 3, 4, 5];
 let sum = arr9.reduce((sum, current) => sum + current, 0);
 console.log(sum); // 15
-// reduceRight() 类似reduce(), 遍历顺序为从右至左
+// reduceRight() 类似reduce(), 遍历顺序为从右至左,
 
 // arr.forEach(function(item, index, array){
 //   ...
 // }) 遍历数组元素执行函数
-['Bilbo', 'Gandalf', 'Nazgul'].forEach((item, index, array) => console.log(`${item} is at ${index} in ${array}`));
+['Bilbo', 'Gandalf', 'Nazgul'].forEach(
+    (item, index, array) =>
+        console.log(`${item} is at ${index} in ${array}`)
+);
 
 // isArray() 判断是否为数组
 console.log(Array.isArray({})); // false

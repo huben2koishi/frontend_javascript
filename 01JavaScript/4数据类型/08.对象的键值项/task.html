@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function sumSalaries(obj) {
+        let result = 0;
+        for (let salary of Object.values(obj)) {
+            result += salary;
+        }
+        return result;
+    }
+
+    function count(obj) {
+        return Object.values(obj).length;
+    }
+</script>
+
+</body>
+</html>
