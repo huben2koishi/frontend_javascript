@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    let user = {
+        name: "John",
+        years: 30
+    };
+
+    let {
+        name,
+        years: age,
+        isAdmin = false,
+    } = user;
+
+    console.log(`${name} ${age} ${isAdmin}`)
+
+    let salaries = {
+        "John": 100,
+        "Pete": 300,
+        "Mary": 250
+    };
+
+    function topSalary(obj) {
+        let top = 0,
+            topName = null;
+
+        for (let [name, salary] of Object.entries(obj)) {
+            if (top < salary) {
+                top = salary;
+                topName = name;
+            }
+        }
+
+        return topName;
+    }
+
+    console.log(topSalary(salaries));
+</script>
+
+</body>
+</html>
