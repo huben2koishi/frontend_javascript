@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function makeCounter() {
+        let count = 0;
+
+        function counter() {
+            return count++;
+        }
+
+        counter.set = value => count = value;
+
+        counter.decrease = () => count--;
+
+        return counter;
+    }
+
+    let counter = makeCounter();
+    console.log(counter());
+    console.log(counter());
+    console.log(counter());
+    console.log(counter.decrease());
+
+    function sum(a) {
+        let current = a;
+
+        function f(b) {
+            current += b;
+            return f;
+        }
+
+        f.toString = function () {
+            return current;
+        };
+        return f;
+    }
+
+    console.log(sum(1)(2));
+    console.log(sum(6)(-1)(-2)(-3));
+</script>
+
+</body>
+</html>

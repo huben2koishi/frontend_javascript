@@ -58,7 +58,7 @@ let arr5 = [
 ];
 let result = arr5.find(value => value.id == 1);
 console.log(result);
-// findIndex() 类似find(), 返回元素的索引而非元素本身
+// findIndex() 类似find(), 但返回的是索引而非元素本身
 
 // filter() find()查询的是使函数返回true的第一个值,
 // 如果需要匹配的有很多, 可以使用 filter

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function sum(a) {
+        return function (b) {
+            return a + b;
+        }
+    }
+
+    console.log(sum(4)(5));
+
+    function inBetween(a, b) {
+        return function (value) {
+            return value >= a && value <= b
+        }
+    }
+
+    function inArray(arr) {
+        return function (value) {
+            return arr.includes(value);
+        }
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 7];
+
+    console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
+    console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
+
+    function byField(fieldName) {
+        return function (a, b) {
+            return a[fieldName] > b[fieldName] ? 1 : -1;
+        }
+    }
+
+    let users = [
+        {name: "John", age: 20, surname: "Johnson"},
+        {name: "Pete", age: 18, surname: "Peterson"},
+        {name: "Ann", age: 19, surname: "Hathaway"}
+    ];
+    users.forEach(user => console.log(user.name)); // John, Pete, Ann
+
+    users.sort(byField('name'));
+    users.forEach(user => console.log(user.name)); // Ann, John, Pete
+
+    users.sort(byField('age'));
+    users.forEach(user => console.log(user.name)); // Pete, Ann, John
+
+    function makeArmy() {
+        let shooters = [];
+
+        for (let i = 0; i < 10; i++) {
+            let shooter = function () { // shooter 函数
+                console.log(i); // 应该显示它自己的数字
+            };
+            shooters.push(shooter);
+        }
+
+        return shooters;
+    }
+
+    let army = makeArmy();
+
+    army[0](); // 第 0 号 shooter 显示 10
+    army[5](); // 第 5 号也输出 10...
+    // ... 所有的 shooters 都显示 10 而不是它们的 0, 1, 2, 3...
+
+</script>
+
+</body>
+</html>
