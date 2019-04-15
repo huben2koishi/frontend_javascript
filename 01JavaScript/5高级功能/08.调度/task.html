@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task</title>
+</head>
+<body>
+
+<script>
+    function printNumbers1(f, t) {
+        let current = f;
+        let timer = setInterval(() => {
+            console.log(current);
+            if (current == t) {
+                clearTimeout(timer);
+            }
+            current++;
+        }, 1000);
+    }
+
+    function printNumbers2(f, t) {
+        let current = f;
+        setTimeout(function go() {
+            console.log(current);
+            if (current < t) {
+                current++;
+                setTimeout(go, 1000);
+            }
+
+        }, 1000);
+    }
+
+    printNumbers1(5, 10);
+    printNumbers2(5, 10);
+
+    let i = 0;
+    let start = Date.now();
+
+    let timer = setInterval(() => {
+        for (let j = 0; j < 1000000; i++) {
+            i++;
+        }
+        if (i == 1000000000) {
+            console.log("Done in " + (Date.now() - start) + 'ms');
+            clearInterval(timer);
+        }
+    }, 0)
+
+</script>
+
+</body>
+</html>
