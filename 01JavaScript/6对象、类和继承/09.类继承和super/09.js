@@ -23,3 +23,5 @@ class Rabbit extends Animal {
         console.log(`${this.name} hides`)
     }
 }
+// extends 的实质是给 Rabbit.prototype 添加了一个属性 [[prototype]]
+// 它指向 Animal.prototype
