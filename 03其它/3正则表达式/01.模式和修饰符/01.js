@@ -8,8 +8,14 @@
 */
 "use strict";
 
-// 常用的节点类型
-//   document DOM 中的入口点
-//   元素节点  HTML标签, 树构建块
-//   文本节点  包含文本
-//   注释      注释不会显示, 但仍可从DOM中读取
+// 修饰符
+//   i 不区分大小写
+//   g 匹配所有而非第一个
+//   m 多行模式
+//   u 开启完整 Unicode 支持
+//   y 粘滞模式
+
+let str1 = "I love JavaScript";
+
+console.log(str1.search(/Love/));  // -1 代表没找到
+console.log(str1.search(/Love/i)); // 2
